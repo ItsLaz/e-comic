@@ -5,9 +5,10 @@ import Comic from '../components/ui/Comic';
 import Price from '../components/ui/Price';
 import Rating from '../components/ui/Rating';
 
-function ComicInfo({ comics, addToCart }) {
+function ComicInfo({ comics, addToCart, useAlert }) {
     const { id } = useParams();
     const comic = comics.find((comic) => +comic.id === +id);
+    const alert = useAlert();
 
     return (
         <div id="books__body">
@@ -56,7 +57,18 @@ function ComicInfo({ comics, addToCart }) {
                                 </div>
                                 <button
                                     className="btn"
-                                    onClick={() => addToCart(comic)}
+                                    onClick={() => {
+                                        addToCart(comic);
+                                        alert.show(
+                                            <div
+                                                style={{
+                                                    color: 'rgb(107, 129, 255)',
+                                                }}
+                                            >
+                                                'Added to cart!'
+                                            </div>
+                                        );
+                                    }}
                                 >
                                     Add to cart
                                 </button>

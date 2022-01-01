@@ -7,6 +7,7 @@ import { comics } from './data';
 import ComicInfo from './pages/ComicInfo';
 import Cart from './pages/Cart';
 import { useEffect, useState } from 'react';
+import { useAlert } from 'react-alert';
 
 function App() {
     const [cart, setCart] = useState([]);
@@ -73,7 +74,11 @@ function App() {
                     <Route
                         path="/comics/:id"
                         element={
-                            <ComicInfo comics={comics} addToCart={addToCart} />
+                            <ComicInfo
+                                comics={comics}
+                                addToCart={addToCart}
+                                useAlert={useAlert}
+                            />
                         }
                     />
                     <Route
