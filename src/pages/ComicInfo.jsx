@@ -19,9 +19,9 @@ function ComicInfo({ comics, addToCart, useAlert }) {
                             <Link to="/books" className="book__link">
                                 <FontAwesomeIcon icon="arrow-left" />
                             </Link>
-                            <Link to="/books" className="book__link">
+                            <Link to="/comics" className="book__link">
                                 <h2 className="book__selected--title--top">
-                                    Books
+                                    Comics
                                 </h2>
                             </Link>
                         </div>
